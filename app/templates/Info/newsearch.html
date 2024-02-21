@@ -1,0 +1,18 @@
+{% extends 'users/layout.html' %}
+{% load static %}
+{% block title %}
+    Timdothatlac.vn
+{% endblock %}
+
+{% block wrapper %}
+ <div id="container">
+
+  {% for item in items %}
+  <div><a href="{% url 'apps:item' item.id %}"> Item {{ item.id }}</a> Titlle: <b>{{ item.title }}</b> </div>
+  {% endfor %}
+  
+</div> 
+
+{% comment %} <div id="container">
+        </div> {% endcomment %}
+{% endblock %}

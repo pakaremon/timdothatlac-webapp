@@ -1,0 +1,61 @@
+{% extends 'users/layout.html'%}
+{% block title%}
+    Register
+{% endblock%}
+
+{% block body %}
+<div class='sidebar'>
+    <a class='active' href="{% url 'index'%}">General information</a>
+    <a href="#">My article</a>
+    <a href="#">Update information</a>
+    <a href="#">Sign up for</a>
+    <a href="{% url 'resetpwd' %}">Chang Password</a>
+</div>
+<!-- The content -->
+<div class='content'>
+    <h2><b>Update information</b></h2>
+
+    <form action="updaterecord/{{ user.id }}" , method="POST">
+        {% csrf_token %}
+        <div class='container'>
+            <p>Please fill in this form to update account</p>
+            <hr>
+            <label for="name"><b>Full name</b></label>
+            <input type="text",name='fullname', value="{{ user.fullname }}">
+         
+            
+        </div>
+
+    </form>
+       
+    
+        <select class="form-select" aria-label="Default select example">
+        <option selected>Gender</option>
+        <option value="1">Men</option>
+        <option value="2">Woman</option>
+        </select>
+        <hr>
+          <select class="form-select" aria-label="Default select example">
+        <option selected>Year_of_born</option>
+        <option value="1">2022</option>
+        <option value="2">2021</option>
+          </select>
+        <hr>
+        <label for="address"><b>Address</b></label>
+        </select>  <select class="form-select" aria-label="Default select example">
+        <option selected>Provice/City</option>
+        <option value="1">HaNoi</option>
+        <option value="2">HoChiMInh</option>
+        </select>
+        <hr>
+        </select>  <select class="form-select" aria-label="Default select example">
+        <option selected>Default</option>
+        <option value="1">Town</option>
+        <option value="2">District</option>
+        </select>
+       <hr>
+       <button type='submit' class='savebtn' style='text-align: center;'> Save</button>
+
+</div>
+
+{% endblock %}

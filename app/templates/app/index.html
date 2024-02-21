@@ -1,0 +1,79 @@
+{% extends 'app/frame.html'%}
+{% comment %} 
+ <!-- title = models.CharField("Tiêu đề", max_length = 200)
+    postInfo = models.CharField("Kiểu tin tức",max_length = 10,choices=_postInfo,blank=True)
+    typeItem = models.CharField("Phân loại đồ", max_length = 50)
+    adrLost = models.CharField("Địa điểm mất",max_length=200)
+    image = models.ImageField( upload_to='images/', height_field=None, width_field=None, max_length=None) 
+    content = models.CharField("Nội dung", max_length=500)
+    fullname = models.CharField("Họ tên",blank = True, max_length = 100)
+    address = models.CharField("Địa chỉ",blank = True, max_length = 200)
+    phoneNum = models.CharField("Số điện thoại",blank =  True, max_length = 10)
+    email = models.EmailField(("Email"),blank = True, max_length=254)
+
+     --> {% endcomment %}
+
+  
+{% block content %}
+
+    <h1>Tin mới nhất  </h1>
+     {%if messages %}
+    {% for message in messages %}
+        <div class="{{message.tags}}" >{{message }}</div>
+    {%endfor%}
+    {%endif%}
+    {% comment %} <ul class="list-group list-group-flush">
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+  <li class="list-group-item">A fourth item</li>
+  <li class="list-group-item">And a fifth one</li>
+</ul> {% endcomment %}
+    <div class="list-group ">
+      {% for item in items %}
+         <a class="list-group-item list-group-item-action list-group-item-secondary" href="{% url 'apps:item' item.id %}">
+           <b>{{ item.title }}</b> 
+           {%if item.location%}
+            <p> Vị trí: {{item.location}} </p> 
+            {%endif%}
+          </a>
+      {% endfor %}
+    </div>
+    <br/><br/>
+    {% comment %} {{items}}<br/>
+
+    Has Previous: {{items.has_previous}}<br/>
+    Has Next: {{items.has_next}}
+    Current Page: {{ items.number}}<br/>
+    Number of pages: {{items.paginator.num_pages}} {% endcomment %}
+    <hr><br/><br/>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        {% if items.has_previous %}
+        <li class="page-item"> <a href="?page1" class="page-link" > &laquo First </a> </li>
+        <li class="page-item"> <a class="page-link" href="?page={{ items.previous_page_number }}"> previous</a> <li>
+        {%endif%}
+
+        <li class="page-item disabled"> <a class="page-link" href="#"> Page {{items.number}} of {{items.paginator.num_pages}} </a><li>
+        
+         
+          {%for i in nums %}
+
+            <li class="page-item" > <a class="page-link" href="?page={{forloop.counter}}"> {{ forloop.counter }}</a></li>
+          {% endfor %}
+
+
+        {% if items.has_next %}
+      <li class="page-item"> <a class="page-link" href="?page={{ items.next_page_number }}"> next</a> </li>
+
+        <li class="page-item"> <a  class="page-link" href="?page={{items.paginator.num_pages}}"> Last &raquo</a> </li>
+        {% endif %}
+
+      <ul>
+    </nav>
+
+
+
+
+  
+{% endblock %}

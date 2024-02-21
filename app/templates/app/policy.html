@@ -1,0 +1,38 @@
+{% extends 'app/frame.html' %}
+{% load static %}
+{% comment %} {% block title %}
+Chính sách bảo mật
+{% endblock %} {% endcomment %}
+
+{% block content %}
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+
+            <div class="col-lg-6">
+                <h4>Chính sách bảo mật</h4>
+                <b>Khi người dùng đã đăng nhập vào hệ thống, đồng nghĩa với việc người dùng đã rõ các điều khoản sử
+                    dụng, chính sách bảo mật</b>
+                <img src="{% static 'app/policy.jpg' %}" alt="" style='height: 100%; width: 100%; object-fit: contain'>
+                <b>Thông tin bài đăng</b>
+                <p>Chúng tôi không chịu trách nhiệm với thông tin người dùng tự đăng tải lên, khi người dùng đã đăng tin
+                    lên thì sẽ tự chịu trách nhiệm về thông tin mình đã đăng tải lên không gian mạng. Bài đăng sau khi
+                    được phê duyệt thì người dùng sẽ không thể chỉnh sửa, nếu vẫn muốn làm điều này, hãy liên hệ hỗ trợ
+                    viên của chúng tôi qua Messenger của trang.</p>
+                <b>Thông tin cá nhân nếu bạn có cung cấp</b>
+                <p>Chúng tôi sẽ không bán, chia sẻ bất kỳ thông tin cá nhân nào bạn cung cấp cho chúng tôi.</p>
+                <p>Chúng tôi có thể chia sẻ thông tin với các cơ quan chính phủ hoặc các cơ quan chức năng trong việc
+                    phòng chống gian lận hoặc điều tra theo yêu cầu của pháp luật.</p>
+                <b>Thời gian áp dụng</b>
+                <p>Chính sách này được áp dụng xuyên suốt thời gian trang web này hoạt động.</p>
+                <p>
+                    Chia sẻ:
+                </p>
+            </div>
+            <div class="col-lg-3">
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'app/frame.html' %}
+
+{% comment %} title = models.CharField("Tiêu đề", max_length = 200)
+    postInfo = models.CharField("Kiểu tin tức",max_length = 10,choices=_postInfo,blank=True)
+    typeItem = models.CharField("Phân loại đồ", max_length = 50, choices=_typeItem,blank=True)
+    adrLost = models.CharField("Địa điểm mất",max_length=200)
+    image = models.ImageField( upload_to='images/', height_field=None, width_field=None, max_length=None)
+    content = models.CharField("Nội dung", max_length=500)
+    fullname = models.CharField("Họ tên",blank = True, max_length = 100)
+    address = models.CharField("Địa chỉ",blank = True, max_length = 200)
+    phoneNum = models.CharField("Số điện thoại",blank =  True, max_length = 10)
+    email = models.EmailField(("Email"),blank = True, max_length=254) {% endcomment %}
+
+{% block title %} Post new {% endblock %}
+
+     <div id='post'>
+                <h5>Title</h5>
+                <!-- <input type="text" name="TieuDe" id="TieuDe" placeholder='VD: Rơi ví của anh A tại quận Cầu Giấy Hà Nội'> -->
+                <input class="form-control" type="text" placeholder="VD: drop A 's wallet in TanBinh district" aria-label="default input example">
+                <h3>Chọn loại tin</h3>
+                <form action="/addItem", method='post',enctype='multipart/form-data'>
+
+                    {% csrf_token %}
+                    <label> Tiêu đề </label>
+                    <input type='text' name="title"> <br>
+
+                    <label> Loai do</label>
+                    <select name='typepost'>
+                        <option> -----Hay Chon------ </option>
+                        {% for type in typePost %}
+                            <option >{{ type }} </option>
+                        {% endfor %}
+                    </select>
+
+                    <label>Loai do </label>
+                    <select name='typeitem'>
+                        <option>=--------Hay Chon----------</option>
+                        {% for type in typeItem %}
+                            <option value=''>{{ type }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label> vi tri roi do </label>
+                    <input type='text' name="addresslost"> <br>
+
+                    <label> Dia chi cua ban </label>
+                    <input type='text' name="address"> <br>
+                    <label> Noi dung</label>
+                    <input type='text' name="content"> <br>
+                    <label> Full nam</label>
+                    <input type='text' name="fullname"> <br>
+                    <label> So dien Thoai</label>
+                    <input type='int' name="phoneNum"> <br>
+                    <label> Email</label>
+                    <input type='text' name="Email"> <br>
+
+                    <label> Anh </label>
+                    <input type='file' name="image"> <br>
+
+
+
+                    <button type="submit" class="btn btn-success">Upload</button>
+
+
+
+                </form>
+
+
+
+            </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'users/layout.html' %}
+{% load static %}
+{% block title %}
+    Timdothatlac.vn
+{% endblock %}
+
+{% block wrapper %}
+ <div id="container">
+
+  {% for item in items %}
+  <div style=' background-color: LawnGreen;'><a href="{% url 'apps:item' item.id %}"> Xem chi tiết </a> Titlle: <b>{{ item.title }}</b> </div>
+  {% endfor %}
+  
+</div> 
+
+{% comment %} <div id="container">
+        </div> {% endcomment %}
+{% endblock %}

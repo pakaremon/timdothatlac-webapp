@@ -1,0 +1,44 @@
+{% extends 'users/layout.html' %}
+{% load static %}
+{% block title %}
+    Timdothatlac.vn
+{% endblock %}
+
+{% block wrapper %}
+
+         <div class="wrapper" >
+        <div class="left-content">
+            <h3>Login Account</h3>
+             <div class="icons_form">
+                <span> <a href="{% url 'social:begin' 'google-oauth2' %}"><i class="fa-brands fa-google"></i></a></span>
+                <span> <a href="{% url 'social:begin' 'facebook' %}"><i class="fa-brands fa-facebook-f fb_icon"></i></a></span>
+                <span><i class="fa-brands fa-twitter"></i></span>
+                <span><i class="fa-brands fa-linkedin-in"></i></span>
+             </div>
+            <form action="{% url 'users:login' %}" method='post' class="form_group">
+                {% csrf_token %}
+                
+                <div class="username">
+                    <label for="exampleInputEmail1" class="form-label">Username:</label>
+                    <input class="form-control", type="text", name="username", placeholder="User Name">
+                </div>
+                <div class="password">
+                    <label for="exampleInputPassword1" class="form-label">Password:</label>
+                    <input type="password", name='password',placeholder="Pass word", class="form-control" >
+                </div>
+
+
+                <input type="submit", value='Login' class="btn_submit">
+                <p class="forget_password"><a href="#">Forgot your password?</a></p>
+                <p id="btn_register"><a href="{% url 'users:register' %}">Register</a></p>
+            </form>
+
+        </div>
+        <div class="image">
+         <img src="{% static 'users/background_login.png'%}" alt="">
+        </div>
+
+
+    </div>
+
+{% endblock %}

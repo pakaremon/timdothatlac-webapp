@@ -1,0 +1,32 @@
+{% load static %}
+<div class="container navbar" >
+    <div class="wrapper">
+
+        <a href="{% url 'apps:indexApp'%}" class="col-sm-6 col-lg-3"><img src="{% static 'app/homelogo.png' %}" alt="Home Page" class="homelogo"></a>
+        <div class="col-sm-6 col-lg-6 ">
+            
+        </div>
+        <div class="col-sm-6 order-sm-2 col-lg-3">
+            <ul class="nav	">
+                <li>
+                    <a href="{% url 'apps:postnew'%}">
+                        <i class="fas fa-plus-circle"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-bell"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'users:index' %}">
+                        <abbr title="Login or Register" ><i class="fas fa-user-circle" > </i></abbr>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+</div>

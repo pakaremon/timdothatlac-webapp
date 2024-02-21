@@ -1,0 +1,22 @@
+{% extends 'users/layout.html' %}
+{% load static %}
+{% block title %}
+    Timdothatlac.vn
+{% endblock %}
+
+{% block wrapper %}
+    <div id="container">
+        {% if search %}
+          
+          
+          {%for item in newitems %}
+        
+            <div style="background-color: LawnGreen;"> <a href="{% url 'apps:item' item.id %}"> Xem chi tiết</a> {{item.title}} </div>
+          {%endfor%}
+        {%else%}
+        <h1>You Forgot to search ....</h1>
+        {%endif%}
+      
+
+    </div>
+{% endblock %}

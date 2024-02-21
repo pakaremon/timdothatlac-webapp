@@ -1,0 +1,46 @@
+{% extends 'app/frame.html' %}
+{% load static %}
+{% comment %} {% block title %}
+Điều khoản sử dụng
+{% endblock %} {% endcomment %}
+
+{% block content %}
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-lg-6">
+                <h4>Điều khoản sử dụng</h4>
+                <b>Điều khoản chung</b>
+                <img src="{% static 'app/terms.jpg' %}" alt="" style='height: 100%; width: 100%; object-fit: contain'>
+                <b>Phía người dùng:</b>
+                <ul>
+                    <li>Người dùng được phép đăng nhập bằng nhập bằng tài khoản đăng ký, bên thứ 3 như: Google, Facebook
+                    </li>
+                    <li>Mỗi nội dung chỉ được đăng 1 bài, các bài trùng lặp nội dung sẽ không được duyệt và bị xóa.</li>
+                    <li>Mỗi ngày người dùng được phép đăng tối đa 2 tin</li>
+                    <li>Người dùng phải bảo mật thông tin cá nhân của mình khi đăng tin (VD: che mờ các mã số quan trọng
+                        như CCCD, BLX vv.. tránh bị kẻ xấu lợi dụng)</li>
+                    <li>Sau khi đăng tin có thể dùng dịch vụ đẩy tin lên top trang chủ để bài viết tiếp cận nhiều người
+                        hơn ( mọi người vẫn có thể tìm thấy tin của bạn với chức năng Tìm kiếm nâng cao )</li>
+                    <li>Các tài khoản vi phạm chính sách bảo mật sẽ bị khóa tài khoản</li>
+                    <li>Nếu cần hỗ trợ vui lòng liên hệ với Hỗ trợ viên qua Messenger của trang</li>
+                </ul>
+                <b>Phía hệ thống Timdothatlac.vn:</b>
+                <ul>
+                    <li>Là website giúp mọi người đăng tin tìm đồ/nhặt được đồ, chúng tôi không nhận đồ hộ.</li>
+                    <li>Đảm bảo hệ thống hoạt động bình thường cho mọi người.</li>
+                    <li>Hỗ trợ người dùng nếu có nhu cầu.</li>
+                    <li>Vô hiệu hóa tài khoản/bài đăng của người dùng nếu vi phạm chính sách bảo mật hoặc spam mà không
+                        cần báo trước.</li>
+                </ul>
+                <p>
+                    Chia sẻ:
+                </p>
+            </div>
+            <div class="col-lg-3">
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

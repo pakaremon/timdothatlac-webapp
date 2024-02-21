@@ -1,0 +1,10 @@
+{% extends 'users/layout.html' %}
+{% load static %}
+{% block title %}
+    Timdothatlac.vn
+{% endblock %}
+
+{% block wrapper %}
+    <p>Logged out!</p>
+  <a href="{% url 'login'%}">Click here to login again.</a>
+{% endblock %}

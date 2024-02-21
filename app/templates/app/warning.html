@@ -1,0 +1,53 @@
+{% extends 'app/frame.html' %}
+{% load static %}
+{% comment %} {% block title %}
+Cảnh báo lừa đảo
+{% endblock %} {% endcomment %}
+
+{% block content %}
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+
+            <div class="col-lg-6">
+                <h4>Cảnh báo lừa đảo</h4>
+                <b>Cảnh báo lừa đảo với người đang tìm ví, giấy tờ, thú cưng thất lạc, thú cưng bị bắt mất</b>
+
+                <img src="{% static 'app/warning.jpg' %}" alt="" style='height: 100%; width: 100%; object-fit: contain'>
+
+
+                <b>Cảnh báo những người đang cần tìm ví, giấy tờ:</b>
+                <ul>
+                    <li>Xác định chính xác xem người ta có đang cầm tài sản của mình không, bằng cách yêu cầu cung thông
+                        tin trên CCCD, giấy tờ liên quan ( tất cả các loại giấy tờ khi đăng công khai lên các trang rao
+                        vặt, các trang mạng xã hội cần phải che các mã số quan trọng)</li>
+                    <li>Tuyệt đối không chuyển khoản trước khi bị yêu cầu chuộc</li>
+                    <li>Cảm ơn và hậu tạ trực tiếp, tận nơi (không chuyển khoản trước).</li>
+                    <li>100% yêu cầu chuyển khoản trước là lừa đảo</li>
+                    <li>Nếu là nữ, không nên đi nhận đồ 1 mình, để đảm bảo an toàn hãy đi cùng 1 người là nam.</li>
+                </ul>
+                <b>Cảnh báo những người đang cần thú cưng, chó, mèo:</b>
+                <ul>
+                    <li>Cảnh báo những người đang cần thú cưng, chó, mèo:</li>
+                    <li>Tuyệt đối không chuyển khoản trước khi bị yêu cầu chuộc.</li>
+                    <li>Cảm ơn và hậu tạ trực tiếp, tận nơi (không chuyển khoản trước).</li>
+                    <li>100% yêu cầu chuyển khoản trước là lừa đảo.</li>
+                </ul>
+                <p>Chúng tôi "timdothatlac.vn":</p>
+                <ul>
+                    <li>Không có cá nhân đại diện để liên lạc với mọi người</li>
+                    <li>Không nhận đồ hộ người mất</li>
+                    <li>Mọi cá nhân mạo danh timdothatlac.vn đều là lừa đảo.</li>
+                </ul>
+                <p>Xem Danh sách số điện thoại lừa đảo để tránh.</p>
+                <p>
+                    Chia sẻ:
+                </p>
+            </div>
+            <div class="col-lg-3">
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

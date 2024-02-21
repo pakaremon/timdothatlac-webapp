@@ -1,0 +1,43 @@
+{% extends 'app/frame.html' %}
+{% load static %}
+
+{% comment %} {% block title %}
+    Giới thiệu
+{% endblock %} {% endcomment %}
+
+{% block content %}
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+           
+            <div class="col-lg-6">
+                <h3>Giới thiệu</h3>
+                <b>Đã bao giờ bạn bị rơi ví, mất giấy tờ, thất lạc thú cưng yêu quý của bạn chưa?</b>
+                <img src="{% static 'app/infoweb.jpg' %}" alt="" style='height: 100%; width: 100%; object-fit: contain'>
+                <p>Đã bao giờ bạn bị rơi ví, mất giấy tờ, thất lạc thú cưng yêu quý của bạn chưa?</p><br>
+                <p>Nếu đã từng lâm vào hoàn cảnh như vậy thì chắc chắn mọi người sẽ tìm cách để tìm lại những thứ
+                    mình bị mất.</p><br>
+                <p>Trang web timdothatlac.vn được sinh ra để làm nhiệm vụ đó.</p><br>
+                <p>Tại đây mọi người có thể :</p><br>
+                <ul>
+                    <li>Đăng tin tìm đồ, nhặt được đồ</li>
+                    <li>Đăng tin tìm thú cưng/ bắt được thú cưng bị lạc</li>
+                    <li>Tìm người thân thất lạc/ gặp người thất lạc thì đăng tin giúp tìm người nhà</li>
+                    <li>Đăng tin cho đồ không dùng nữa để người đang thiếu có thể lấy, tránh lãng phí tài nguyên cho
+                        xã hội</li>
+                </ul>
+                <p>
+                    Hãy chia sẻ timdothatlac.vn đến càng nhiều người càng tốt để mọi người khi mất đồ có thể nghĩ
+                    ngay đến timdothatlac.vn để đăng tin, giúp cho mọi người tìm thấy đồ một cách nhanh chóng.
+                </p><br>
+                <p>
+                    Chia sẻ đến:
+                </p>
+            </div>
+            <div class="col-lg-3">
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'users/layout.html' %}
+{% load static %}
+{% block title %}
+    Update ifo user
+{% endblock %}
+{% block wrapper %}
+
+   <h1>Cập nhật thông tin </h1>
+      
+    <form action="updaterecord/{{ mymember.id }}" method="post">
+    {% csrf_token %}
+     
+
+    Email:<br>
+    <input name="email" value="{{ mymember.email }}" class="form-control">
+    <br><br>
+
+    First name<br>
+    <input name="first_name" value="{{ mymember.first_name}}" class="form-control">
+    <br><br>
+
+     Last name<br>
+    <input name="last_name" value="{{ mymember.last_name }}" class="form-control">
+    <br><br>
+
+   
+    <input type="submit" value="Submit" class="btn btn-secondary">
+    </form>
+{% endblock %}

@@ -1,0 +1,44 @@
+
+{% extends 'users/layout.html' %}
+
+{% load static %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block wrapper %}
+   
+ <div class="wrapper" >
+                {%if messages %}
+                    {% for message in messages %}
+                        <div class="{{message.tags}}" >{{message }}</div>
+                    {%endfor%}
+                {%endif%}
+        <div class="left-content">
+            <h3>Create Account</h3>
+             <div class="icons_form">
+                <span><i class="fa-brands fa-google"></i></span>
+                <span><i class="fa-brands fa-facebook-f fb_icon"></i></span>
+                <span><i class="fa-brands fa-twitter"></i></span>
+                <span><i class="fa-brands fa-linkedin-in"></i></span>
+             </div>
+       <form action="{% url 'users:register' %}" method="POST">
+
+           {% csrf_token %}
+           {{form.as_p}}
+
+           <input type="submit" value="Đăng ký" class="btn btn-primary">
+       </form>
+            <p> Already have an account?<a href="{% url 'users:login'%}"> login</a></p>
+            </div>
+        <div class="image">
+         <img src="{% static 'users/background_login.png'%}" alt="">
+        </div>
+
+
+    </div>
+
+<!--   </body>-->
+<!--</html>-->
+       {% endblock %}

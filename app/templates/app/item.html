@@ -1,0 +1,96 @@
+{% extends 'users/layout.html' %}
+{% load static %}
+{% block title %}
+    Timdothatlac.vn
+{% endblock %}
+
+{% block wrapper %}
+
+<div id="detail" >
+    <ul class="list-group list-group-flush">
+        {% comment %} <li>Title {{ item.title }}</li>
+       <li>Type of items: {{item.typeItem}}</li>
+       <li>Kind of news : {{ item.postInfo }}</li>
+       <li>Address: {{ item.location }}</li>
+       <li>Content: {{ item.postInfo }}</li>
+       <li>name  post: {{ item.fullname }}</li>
+       <li>phone number: {{ item.phoneNum }}</li>
+       <li>Email: {{ item.postInfo }}</li> {% endcomment %}
+     
+
+          {%if item.title%}
+            <li class="list-group-item"> <b>Tiêu đề:</b>  {{ item.title }}</li>
+          {% endif %}
+          {% if item.content %}
+            <li class="list-group-item"><b>Nội dung:</b>  {{item.content}}</li>
+          {% endif %}
+
+           {% if item.image %}
+            <li class="list-group-item"><b>Hình ảnh </b>  {{item.image}}</li>
+          {% endif %}
+
+          
+          {%if item.location  %}
+            <li class="list-group-item"><b>Địa điểm thất lạc:</b>  {{ item.location }}</li>
+          {% endif %}
+        
+          {%if item.email %}
+            <li class="list-group-item"><b>email liên hệ: </b>  {{ item.email }}</li>
+          {%endif%}
+          {%if item.phone%}
+            <li class="list-group-item"><b>Số điện thoại liên hệ:</b> {{ item.phone }}</li>
+          {%endif%}
+
+          {%if item.date_time%}
+            <li class="list-group-item"><b>Thời gian đăng tin: </b> {{ item.date_time }}</li>
+          {%endif%}
+          {% if item.image %}
+            <li class="list-group-item"><img src="/app/media/{{item.image}}" class="img" style="width 80px; height 80px;"></li>
+          {% endif %}
+          {% comment %} Delete or update items {% endcomment %}
+          
+          
+
+          <li class="list-group-item">
+            <h2>Comment</h2>
+
+           {% for comment in item.comments.all %}
+           <div class="list-group">
+           
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1" ><strong>{{comment.user}}</strong><h5>
+              <small class="text-muted"><p>{{comment.date}}</p></small>
+              <p>{{comment.content|linebreaks}}</p>
+              </div>
+           
+            </div>
+          {% endfor %}
+
+          {%if user.username %}
+          <form action="{% url 'apps:item' item.pk %}" method='POST'>
+            {%csrf_token%}
+            <p> <label> Bình Luận</p>
+              {{form.content}}
+              <br/>
+              <input class="btn btn-primary" type="submit" value="Bình Luận">
+          {% endif %} 
+
+          {%if not user.username %}
+                <h4>Đăng nhập để bình luận</h4>
+              <a href="{%url 'users:login'%}"> <button  class="btn btn-secondary" type="button"> Đăng nhập</button> </a>
+
+          {% endif %}
+          
+          </li>
+
+         
+
+    </ul
+
+     
+  </div> 
+
+  
+ 
+
+{% endblock %}
